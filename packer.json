@@ -1,0 +1,30 @@
+{
+    "builders": [{
+      "type": "azure-arm",
+  
+      "client_id": "update",
+      "client_secret": "update",
+      "tenant_id": "update",
+      "subscription_id": "update",
+  
+      "managed_image_resource_group_name": "update",
+      "managed_image_name": "update",
+  
+      "os_type": "Linux",
+      "image_publisher": "Canonical",
+      "image_offer": "UbuntuServer",
+      "image_sku": "18.04-LTS",
+  
+      "azure_tags": {
+          "consul": "hcs"      },
+  
+      "location": "West US 2",
+      "vm_size": "Standard_DS2_v2"
+    }],
+    "provisioners": [
+        {
+          "type": "ansible",
+          "playbook_file": "./playbook.yml"
+        }
+      ]
+  }
